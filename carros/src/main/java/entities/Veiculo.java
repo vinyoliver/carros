@@ -17,7 +17,7 @@ public class Veiculo extends EntidadeBase {
 	private static final long serialVersionUID = -6365544988000346317L;
 
 	@Id
-	@SequenceGenerator(name = "SEQ_VEICULO", sequenceName = "SEQ_VEICULO")
+	@SequenceGenerator(name = "SEQ_VEICULO", sequenceName = "SEQ_VEICULO", initialValue = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_VEICULO")
 	private Long id;
 

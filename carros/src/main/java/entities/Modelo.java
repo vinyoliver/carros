@@ -11,11 +11,11 @@ public class Modelo extends EntidadeBase{
 
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -8031793257574059944L;
 	@Id
-	@SequenceGenerator(name = "SEQ_MODELO", sequenceName = "SEQ_MODELO")
+	@SequenceGenerator(name = "SEQ_MODELO", sequenceName = "SEQ_MODELO", initialValue = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_MODELO")
 	private Long id;
 

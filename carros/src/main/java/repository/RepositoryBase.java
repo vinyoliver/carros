@@ -12,11 +12,11 @@ public class RepositoryBase<T extends EntidadeBase> {
 	@PersistenceContext
 	protected EntityManager em;
 
-	protected T findById(Class<T> clazz, Long id){
+	public T findById(Class<T> clazz, Long id){
 		return em.find(clazz, id);
 	}
 
-	protected void salvar(T object){
+	public void salvar(T object){
 		if(object.getId() == null){
 			em.persist(object);
 		}else{
@@ -25,7 +25,7 @@ public class RepositoryBase<T extends EntidadeBase> {
 	}
 
 
-	protected void remover(T object){
+	public void remover(T object){
 		em.remove(object);
 	}
 

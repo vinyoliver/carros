@@ -15,7 +15,7 @@ public class Categoria extends EntidadeBase{
 	 */
 	private static final long serialVersionUID = -4680239426589830146L;
 	@Id
-	@SequenceGenerator(name = "SEQ_CATEGORIA", sequenceName = "SEQ_CATEGORIA")
+	@SequenceGenerator(name = "SEQ_CATEGORIA", sequenceName = "SEQ_CATEGORIA", initialValue = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_CATEGORIA")
 	private Long id;
 
