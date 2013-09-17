@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Not present in rendered output</title>
+</h:head>
+<h:body>
+
+	<h:form id="formEstado">
+
+		<p:growl id="msgs" showDetail="true" showSummary="false"
+			globalOnly="false" />
+
+		<p:panel>
+
+			<fieldset>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Sigla" />
+					<h:inputText id="sigla" value="#{estadoMBeanForm.estado.sigla}" size="5" maxlength="2"/>
+
+					<h:outputLabel value="Nome" />
+					<h:inputText id="nome" value="#{estadoMBeanForm.estado.nome}" />
+
+				</h:panelGrid>
+			</fieldset>
+			<h:commandButton value="gravar"
+				action="#{estadoMBeanForm.gravarEstado}">
+				<f:ajax execute="formEstado" render="formEstado" />
+			</h:commandButton>
+
+			<h:commandButton action="consultaEstado?faces-redirect=true"
+				value="voltar"	 immediate="true" />
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>
