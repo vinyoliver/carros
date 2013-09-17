@@ -52,11 +52,10 @@
 								<h:outputLabel value="Valor Diária" for="txt_valor_diaria" />
 								<p:inputText value="#{veiculoMB.veiculo.valorDiaria}" maxlength="5" label="Valor Diária:" id="txt_valor_diaria" />
 
-								<h:inputHidden value="#{veiculoMB.veiculo.id}" id="txt_id" />
-
-
 								<p:commandButton value="Salvar" image="ui-icon ui-icon-disk" action="#{veiculoMB.salvar}" ajax="false" update="aviso" />
 								<p:commandButton value="Cancelar" action="buscar-veiculo" ajax="false" immediate="true" image="ui-icon ui-icon-close"/>
+
+								<h:inputHidden value="#{veiculoMB.veiculo.id}" id="txt_id" />
 
 							</h:panelGrid>
 						</p:panel>

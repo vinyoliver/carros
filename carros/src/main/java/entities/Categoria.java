@@ -64,4 +64,9 @@ public class Categoria extends EntidadeBase{
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return this.descricao;
+	}
+
 }
