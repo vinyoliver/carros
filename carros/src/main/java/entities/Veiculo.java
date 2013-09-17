@@ -21,7 +21,7 @@ public class Veiculo extends EntidadeBase {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_VEICULO")
 	private Long id;
 
-	@Column(length=4)
+	@Column(length=7)
 	private String placa;
 
 	@Column(length=4)
@@ -41,6 +41,16 @@ public class Veiculo extends EntidadeBase {
 
 	@ManyToOne(optional=false)
 	private Categoria categoria;
+
+	public Double getValorDiaria() {
+		return valorDiaria;
+	}
+
+	public void setValorDiaria(Double valorDiaria) {
+		this.valorDiaria = valorDiaria;
+	}
+
+	private Double valorDiaria;
 
 	public Long getId() {
 		return id;

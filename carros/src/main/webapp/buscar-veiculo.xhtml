@@ -9,20 +9,57 @@
 
 <ui:composition template="/index.xhtml">
 	<ui:define name="conteudo">
-		<h:form>
-			<p:fieldset legend="Buscar Veículo">
-				<br />
-				<br />
-				<h:panelGrid columns="4">
-							teste
-				</h:panelGrid>
-			</p:fieldset>
+
+		<h:form id="formVeiculo">
+
+		<p:growl id="msgs" showDetail="true" showSummary="false"
+			globalOnly="false" />
+
+		<p:panel id="pVeiculo">
 			<p:button outcome="cadastrar-veiculo" value="Novo" icon="ui-icon ui-icon-plusthick"/>
-			<p:commandButton value="Limpar" type="reset" image="ui-icon ui-icon-circle-minus" />
-			<br />
-			<br />
-			<!-- TABLE DEPARTAMENTO -->
-		</h:form>
+			<h:panelGroup id="pgVeiculo">
+
+				<p:dataTable id="dataTable" value="#{veiculoMB.veiculos}" var="item">
+
+					<f:facet name="header">
+			            	Listagem de Veículos
+			    		</f:facet>
+
+					<p:column headerText="Placa">
+						<h:outputLabel value="#{item.placa}" />
+					</p:column>
+					<p:column headerText="Ano Fabricacao">
+						<h:outputLabel value="#{item.anoFabricacao}" />
+					</p:column>
+					<p:column headerText="Ano Modelo">
+						<h:outputLabel value="#{item.anoModelo}" />
+					</p:column>
+					<p:column headerText="Cor">
+						<h:outputLabel value="#{item.cor}" />
+					</p:column>
+					<p:column headerText="Marca">
+						<h:outputLabel value="#{item.marca.descricao}" />
+					</p:column>
+					<p:column headerText="Modelo">
+						<h:outputLabel value="#{item.modelo.descricao}" />
+					</p:column>
+					<p:column headerText="Categoria">
+						<h:outputLabel value="#{item.categoria.descricao}" />
+					</p:column>
+
+					<p:column headerText="Ações">
+						<h:commandButton
+							action="#{veiculoMB.alterar(item)}" value="Alterar" immediate="true"/>
+						<h:commandButton
+							action="#{veiculoMB.remover(item)}" value="Remover">
+						</h:commandButton>
+					</p:column>
+
+				</p:dataTable>
+
+			</h:panelGroup>
+		</p:panel>
+	</h:form>
 	</ui:define>
 </ui:composition>
 

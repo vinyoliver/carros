@@ -25,7 +25,7 @@ public class RepositoryBase<T extends EntidadeBase> {
 	}
 
 	public void remover(T object){
-		em.remove(object);
+		em.remove(em.merge(object));
 	}
 
 }
