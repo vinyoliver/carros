@@ -1,16 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-  <title>My JSF Page</title>
 </h:head>
 <h:body>
-    <h1>Bean Test</h1>
-    <h:outputText value="HelloBean says: #{helloBean.greeting}" />
+	<p:layout fullPage="true">
+		<p:layoutUnit position="center" scrollable="true" header="Veículos">
+			<h:form>
+				<p:menubar>
+					<p:menuitem  value="Veículos" url="/buscar-veiculo.xhtml"  />
+				</p:menubar>
+			</h:form>
+			<br />
+			<ui:insert name="conteudo">
+				<!--CONTEUDO DINAMICO AQUI-->
+			</ui:insert>
+			<br />
+
+			<br />
+			<ui:insert name="table">
+				<!--CONTEUDO DINAMICO AQUI-->
+			</ui:insert>
+			<br />
+
+		</p:layoutUnit>
+
+
+	</p:layout>
+
 </h:body>
 </html>

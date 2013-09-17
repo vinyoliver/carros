@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/index.xhtml">
+	<ui:define name="conteudo">
+		<h:form id="form" >
+		<p:fieldset legend="Buscar veículo">
+			<br/>
+			<br/>
+				<h:form>
+					<center>
+						<p:panel header="Dados do cargo" style="width:60%">
+							<h:panelGrid columns="2">
+
+								<h:outputLabel value="Placa:" for="txt_placa" />
+								<p:inputText value="#{veiculoMB.veiculo.placa}" maxlength="7" label="Placa" id="txt_placa" />
+
+								<h:outputLabel value="Ano Fabricação:" for="txt_ano_fabricacao" />
+								<p:inputText value="#{veiculoMB.veiculo.anoFabricacao}" maxlength="4" label="Ano Fabricação:" id="txt_ano_fabricacao" />
+
+								<h:outputLabel value="Ano Modelo:" for="txt_ano_modelo" />
+								<p:inputText value="#{veiculoMB.veiculo.anoModelo}" maxlength="4" label="Ano Modelo:" id="txt_ano_modelo" />
+
+								<h:outputLabel value="Cor:" for="txt_cor" />
+								<p:inputText value="#{veiculoMB.veiculo.cor}" maxlength="20" label="Cor:" id="txt_cor" />
+
+								<h:outputLabel value="Marca:" for="txt_marca" />
+								<h:selectOneMenu value="#{veiculoMB.veiculo.marca}" style="width:100%" >
+									<f:selectItems  value="#{veiculoMB.marcas}" var="marca" itemLabel="#{marca}" itemValue="#{marca}" converter="marcaConverter" />
+								</h:selectOneMenu>
+
+								<h:outputLabel value="Modelo:" for="txt_modelo" />
+								<h:selectOneMenu value="#{veiculoMB.veiculo.modelo}" style="width:100%" >
+									<f:selectItems  value="#{veiculoMB.modelos}" var="modelo" itemLabel="#{modelo}" itemValue="#{modelo}" converter="modeloConverter" />
+								</h:selectOneMenu>
+
+								<h:outputLabel value="Categoria:" for="txt_categoria" />
+								<p:inputText value="#{veiculoMB.veiculo.categoria}" maxlength="20" label="Categoria:" id="txt_categoria" />
+
+								<h:outputLabel value="Valor Diária" for="txt_valor_diaria" />
+								<p:inputText value="#{veiculoMB.veiculo.categoria}" maxlength="5" label="Valor Diária:" id="txt_valor_diaria" />
+
+								<h:inputHidden value="#{veiculoMB.veiculo.id}" id="txt_id" />
+
+
+								<p:commandButton value="Salvar" image="ui-icon ui-icon-disk" action="#{veiculoMB.salvar}" ajax="false" update="aviso" />
+								<p:commandButton value="Cancelar" action="buscar-veiculo" ajax="false" immediate="true" image="ui-icon ui-icon-close"/>
+
+							</h:panelGrid>
+						</p:panel>
+					</center>
+				</h:form>
+			</p:fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

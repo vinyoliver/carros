@@ -37,6 +37,9 @@ public class Veiculo extends EntidadeBase {
 	private Modelo modelo;
 
 	@ManyToOne(optional=false)
+	private Marca marca;
+
+	@ManyToOne(optional=false)
 	private Categoria categoria;
 
 	public Long getId() {
@@ -93,6 +96,14 @@ public class Veiculo extends EntidadeBase {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
 	}
 
 
